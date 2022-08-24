@@ -12,7 +12,7 @@
     "gen-sdk": "openapi-sdk-generator generate --variant remix --def http://localhost:8090/openapi.json --outdir ./app/sdk"
   },
   "dependencies": {
-    "@cl-privacy/components": "github:jmcginty15/clpc#1c82c3db9cdb2cbf2f95c052b85bf92d1bf5424b",
+    "@cl-privacy/components": "git+ssh://git@github.com:cablelabs/ucp-ui-components.git#29a7154b291374d04b6a51a773a874e707a5cf23",
     "@reach/accordion": "^0.16.1",
     "@reach/slider": "^0.16.0",
     "@reach/tabs": "^0.17.0",

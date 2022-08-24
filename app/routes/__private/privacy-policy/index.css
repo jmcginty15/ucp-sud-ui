@@ -2,7 +2,7 @@ body {
   background-color: var(--background);
 }
 
-[data-ph-checkbox-label] {
+[data-cl-checkbox-label] {
   font-weight: 400;
 }
 

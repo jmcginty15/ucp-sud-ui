@@ -6,5 +6,5 @@ export function Heading(
   }
 ) {
   const { as: Comp, ...rest } = props;
-  return <Comp data-ph-heading="" {...rest} />;
+  return <Comp data-cl-heading="" {...rest} />;
 }
