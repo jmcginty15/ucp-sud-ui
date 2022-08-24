@@ -1,0 +1,5 @@
+[data-ph-heading] {
+  font-weight: 500;
+  font-size: var(--fs6);
+  color: var(--color-foreground-text-me);
+}

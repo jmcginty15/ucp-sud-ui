@@ -1,0 +1,9 @@
+[data-reach-alert-dialog-label] {
+  padding: var(--sp3) var(--sp4);
+  border-block-end: 1px solid var(--color-foreground-separator-me);
+}
+
+[data-reach-alert-dialog-description] {
+  padding: var(--sp4) var(--sp4);
+  color: var(--color-foreground-text-le);
+}

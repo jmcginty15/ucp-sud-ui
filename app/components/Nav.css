@@ -1,0 +1,55 @@
+.nav ul {
+  display: flex;
+  flex: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--sp2) var(--sp6);
+}
+
+.nav li {
+  list-style: none;
+}
+
+.nav a, .nav li > div > div {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--sp2);
+  color: var(--color-neutral-400);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav li > div > div {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.nav .navLinkActive {
+  color: white;
+}
+
+.navContainer {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: start;
+  gap: var(--sp3);
+  margin: 0 auto;
+  padding: 0 var(--sp4);
+  width: 100%;
+  max-width: var(--content-width);
+  border-block-start: 1px solid var(--color-neutral-800);
+  padding-block-start: var(--sp3);
+}
+
+.navContainer > div > * {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: var(--sp1);
+  color: white;
+  font-weight: 700;
+  font-size: var(--fs7);
+  text-decoration: none;
+}

@@ -1,0 +1,482 @@
+body {
+  background-color: var(--background);
+}
+
+[data-ph-checkbox-label] {
+  font-weight: 400;
+}
+
+.toggleForm {
+  display: flex;
+  padding: 10px;
+}
+
+.iconContainer {
+  display: block;
+  margin: 5px auto 5px auto;
+  text-align: center;
+  width: 50px;
+  padding-left: 0;
+  padding-right: 0;
+  height: fit-content;
+  font-size: 28px;
+}
+
+.editButton {
+  background-color: green;
+  border-color: green;
+  color: white;
+}
+
+.editButton:hover {
+  background-color: hsl(120, 100%, 32%) !important;
+  border-color: hsl(120, 100%, 32%) !important;
+}
+
+.deleteButton {
+  background-color: red;
+  border-color: red;
+  color: white;
+}
+
+.deleteButton:hover {
+  background-color: hsl(0, 100%, 64%) !important;
+  border-color: hsl(0, 100%, 64%) !important;
+}
+
+.privacyProfileTable,
+.privacyProfileGetStarted {
+  --margin-inline: var(--sp5);
+  --header-block-padding: var(--sp4);
+
+  margin: var(--sp2) auto var(--sp7);
+  max-width: 1240px;
+  background-color: var(--color-foreground);
+}
+
+.privacyProfileTableContainer {
+  padding: var(--sp4) var(--margin-inline);
+}
+
+.privacyProfileGetStarted {
+  display: grid;
+  border-block-start: 1px solid var(--color-foreground-separator-me);
+  padding: var(--sp4) var(--margin-inline);
+  justify-items: end;
+}
+
+.privacyProfileTable > header {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: var(--sp2);
+  padding: var(--header-block-padding) var(--margin-inline);
+}
+
+.privacyProfileTable > header > div {
+  display: flex;
+  flex: none;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--sp4);
+}
+
+.privacyProfileTable > header > p {
+  color: var(--color-foreground-text-le);
+  line-height: 1.6;
+}
+
+.privacyProfileTable .sections {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: var(--sp1);
+  padding: var(--sp3) 0;
+}
+
+.privacyProfileTableFormControlLayout {
+  display: grid;
+  gap: 0 var(--sp9);
+  padding: var(--sp4) var(--margin-inline);
+}
+
+.privacyProfileTableFormControlLayout > :first-child > :first-child {
+  display: block;
+  font-weight: 500;
+  font-size: var(--fs3);
+  color: var(--color-foreground-text-me);
+  margin-block-end: var(--sp2);
+}
+
+.privacyProfileTableFormControlLayout > :first-child > :nth-child(2) {
+  color: var(--color-foreground-text-le);
+  line-height: 1.6;
+  margin-block-end: var(--sp4);
+}
+
+.privacyProfileTable
+  [data-reach-accordion-item]
+  > h3
+  > [data-reach-accordion-button] {
+  width: 100%;
+  text-align: start;
+  padding: var(--sp3) var(--margin-inline);
+  border-block-start: 1px solid var(--color-foreground-separator-me);
+  border-block-end: 1px solid var(--color-foreground-separator-me);
+  font-size: var(--fs3);
+  font-weight: 500;
+}
+
+.privacyProfileTable
+  [data-reach-accordion-item][data-state="collapsed"]:last-of-type
+  > h3
+  > [data-reach-accordion-button] {
+  border-block-end: none;
+}
+
+.privacyProfileTable
+  [data-reach-accordion-item]
+  > h3
+  > [data-reach-accordion-button]
+  > span:first-of-type {
+  display: inline-flex;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--color-foreground-separator-me);
+  width: 24px;
+  height: 24px;
+  color: var(--color-primary-l);
+  margin-inline-end: var(--sp4);
+  font-size: var(--fs2);
+}
+
+.privacyProfileTable [data-reach-accordion-item][data-disabled] {
+  opacity: 0.5;
+}
+
+.accordionItemActions {
+  display: grid;
+  border-block-start: 1px solid var(--color-foreground-separator-me);
+  padding: var(--sp4) var(--margin-inline);
+}
+
+.checkboxes {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: var(--sp2);
+}
+
+.checkboxes input + span {
+  font-weight: 400;
+}
+
+.fineSection {
+  position: relative;
+  padding: var(--sp5) var(--margin-inline) var(--sp5);
+}
+
+.fineGlobalPreferencesSection {
+  border: 1px solid var(--color-neutral-100);
+  border-radius: var(--br4);
+  background-color: var(--color-neutral-000);
+}
+
+.preferencesHeading {
+  font-size: var(--fs5);
+  font-weight: 500;
+  padding: var(--sp3) var(--sp5);
+  margin-block-end: var(--sp4);
+  color: var(--color-foreground-text-me);
+  border-block-end: 1px solid var(--color-neutral-100);
+}
+
+.preferencesHeading + div {
+  padding: var(--sp4) var(--sp5);
+}
+
+.subPreferencesHeading {
+  font-size: var(--fs5);
+  font-weight: 500;
+  padding: var(--sp3) var(--sp5);
+  color: var(--color-foreground-text-me);
+  border-block-end: 1px solid var(--color-neutral-100);
+}
+
+.sliderTexts {
+  display: grid;
+  gap: var(--sp4);
+  margin-block-start: var(--sp6);
+  /* text-align: center; */
+  color: var(--color-foreground-text-le);
+  margin-inline-start: -6px;
+  margin-inline-end: -6px;
+}
+
+.sliderText {
+  font-weight: 500;
+  color: var(--color-foreground-text-me);
+}
+
+.privacyProfileTable [data-reach-slider-handle] {
+  width: 40px;
+  height: 40px;
+  background: var(--color-primary);
+  border-radius: 50%;
+}
+
+.privacyProfileTable [data-reach-slider-track] {
+  background: var(--color-neutral-300);
+}
+
+.privacyProfileTable [data-reach-slider-range] {
+  background: var(--color-primary-l);
+}
+
+.privacyProfileTable [data-reach-slider-marker] {
+  background: var(--color-neutral-300);
+}
+
+.privacyProfileTable [data-reach-slider-marker][data-orientation="horizontal"] {
+  height: 30px;
+  width: 10px;
+}
+
+.summary {
+  border: 1px solid var(--color-neutral-600);
+  border-radius: var(--br4);
+  padding: var(--sp5) var(--sp6) var(--sp6);
+  margin: var(--sp5) var(--margin-inline);
+  background-color: var(--color-neutral-500);
+}
+
+.summary h4 {
+  margin-block-end: var(--sp2);
+  color: white;
+  font-weight: 500;
+  font-size: var(--fs4);
+  line-height: 1;
+}
+
+.summary p {
+  margin-block-end: var(--sp5);
+  font-size: var(--fs1);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.summary li {
+  list-style: none;
+}
+
+.summaryDataTypeList {
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  gap: var(--sp3);
+}
+
+.summaryDataTypeList > li {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: var(--sp3) var(--sp4);
+  border-radius: var(--br2);
+}
+
+.summaryDataTypeList h4 {
+  margin-block-end: var(--sp3);
+  color: white;
+  font-weight: 500;
+  font-size: var(--fs4);
+}
+
+.summaryDataElementList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp2);
+}
+
+.summaryDataElementList h5 {
+  color: rgba(255, 255, 255, 0.5);
+  margin-block-end: var(--sp0);
+}
+
+.summaryAttributeList {
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  gap: var(--sp2);
+}
+
+.summaryAttributeList li {
+  border-radius: var(--br4);
+  border: 1px solid var(--color-neutral-400);
+  padding: var(--sp0) var(--sp2);
+  background-color: white;
+  font-weight: 500;
+}
+
+.summaryAttributeList li[data-disabled="true"] {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+.policyDetailsSection {
+  margin-block-start: var(--sp5);
+  background-color: var(--color-neutral-000);
+  border: 1px solid var(--color-neutral-100);
+  border-radius: var(--br4);
+  overflow: hidden;
+}
+
+.policyDetailsSectionTabPanelTop {
+  margin: 0 0 var(--sp7);
+}
+
+.policyDetailsSectionTabPanelHeading {
+  font-size: var(--fs6);
+  font-weight: 500;
+  padding-block-end: var(--sp2);
+  margin-block-end: var(--sp6);
+  color: var(--color-foreground-text-me);
+  border-block-end: 1px solid var(--color-neutral-100);
+}
+
+.policyDetailsSection [data-reach-tab-list] {
+  padding: var(--sp4) var(--sp5);
+}
+
+.policyDetailsSection [data-reach-tab-panels] {
+  background-color: white;
+  padding: var(--sp4) var(--sp5) var(--sp5);
+  border-block-start: 1px solid var(--color-foreground-separator-me);
+}
+
+[data-reach-tabs][data-orientation="vertical"] {
+  flex-direction: column;
+}
+
+[data-reach-tab-list] {
+  background: none;
+}
+
+[data-reach-tab] {
+  position: relative;
+  padding: var(--sp2) var(--sp4);
+  border-radius: var(--br3);
+  border: 1px solid transparent;
+  text-align: start;
+  outline: none;
+}
+
+[data-reach-tab][data-selected] {
+  background-color: white;
+  color: var(--color-foreground-text-me);
+  font-weight: 500;
+  border-color: var(--color-neutral-200);
+}
+
+[data-reach-tab][data-selected]::after {
+  content: "";
+  position: absolute;
+  left: -12px;
+  width: 6px;
+  height: 26px;
+  background: var(--color-primary-l);
+  border-radius: 6px;
+}
+
+.dataElementsHeading {
+  font-size: var(--fs5);
+  font-weight: 500;
+  padding-block-end: var(--sp2);
+  margin-block-end: var(--sp4);
+  color: var(--color-foreground-text-me);
+  border-block-end: 1px solid var(--color-foreground-separator-me);
+}
+
+.dataElementList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp5) var(--sp6);
+}
+
+.dataElementListItem {
+  list-style: none;
+}
+
+.dataElementListItem h4 {
+  font-weight: 500;
+  font-size: var(--fs4);
+  color: var(--color-foreground-text-me);
+  margin-block-end: var(--sp4);
+}
+
+.attributeTypeList {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: var(--sp2);
+}
+
+.attributeTypeListItem {
+  list-style: none;
+}
+
+.policyDetailsSection .policyTemplateSelectable h4 {
+  font-size: var(--fs2);
+}
+
+.policyDetailsSection .sliderTexts {
+  gap: var(--sp2);
+}
+
+@media (min-width: 1024px) {
+  .privacyProfileTable,
+  .privacyProfileGetStarted {
+    --margin-inline: var(--sp6);
+    --header-block-padding: var(--sp5);
+
+    box-shadow: var(--box-shadow-0);
+    border-radius: var(--br6);
+    margin-block-start: var(--sp6);
+  }
+
+  .privacyProfileTableFormControlLayout {
+    grid-template-columns: 340px 1fr;
+  }
+
+  .accordionItemActions {
+    justify-items: end;
+  }
+
+  [data-reach-tabs][data-orientation="vertical"] {
+    flex-direction: row;
+  }
+
+  button[form="form-create-policy-definition"] {
+    width: 195px;
+  }
+
+  .policyDetailsSection [data-reach-tabs][data-orientation="vertical"] {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+  }
+
+  .policyDetailsSection [data-reach-tab-list] {
+    min-width: 270px;
+    border: none;
+    padding: 0;
+    padding-inline-end: var(--sp6);
+    margin-inline-start: var(--sp6);
+    margin-block-start: var(--sp5);
+  }
+
+  .policyDetailsSection [data-reach-tab-panels] {
+    border: none;
+    border-inline-start: 1px solid var(--color-foreground-separator-me);
+  }
+}

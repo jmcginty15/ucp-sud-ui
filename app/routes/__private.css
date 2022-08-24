@@ -1,0 +1,47 @@
+.__private-root > header {
+  background-color: var(--background);
+}
+
+.__private-root > header > div:first-of-type {
+  display: flex;
+  flex: none;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--sp4);
+  padding: var(--sp2) var(--sp4);
+}
+
+.__private-root > header > div:first-of-type > a {
+  display: flex;
+  flex: none;
+}
+
+.__private-root > header > div:first-of-type > button {
+  color: white;
+  font-weight: 500;
+}
+
+.__private_menu_user {
+  width: 270px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--fs1);
+  color: var(--color-foreground-text-le);
+  padding: var(--sp3) var(--sp4);
+  border-block-end: 1px solid var(--color-foreground-separator);
+}
+
+.__private_menu_user > div:first-of-type {
+  font-weight: 500;
+  font-size: var(--fs3);
+  color: var(--color-foreground-text-me);
+  margin-block-end: var(--sp0);
+}
+
+.logo {
+  display: block;
+  border-radius: var(--br2);
+  box-shadow: var(--box-shadow-0);
+  background-color: white;
+}

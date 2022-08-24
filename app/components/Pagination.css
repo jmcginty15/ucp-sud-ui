@@ -1,0 +1,18 @@
+[data-pagination] {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--sp2);
+}
+
+[data-pagination] button,
+[data-pagination] a {
+  padding-inline-start: var(--sp3);
+  padding-inline-end: var(--sp3);
+}
+
+[data-pagination] button > *,
+[data-pagination] a > * {
+  gap: var(--sp1);
+}

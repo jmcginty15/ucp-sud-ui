@@ -1,0 +1,101 @@
+.policyTemplateSelectable {
+  display: grid;
+  cursor: pointer;
+  user-select: none;
+}
+
+.policyTemplateSelectable > div > div:first-of-type {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--sp4);
+}
+
+.policyTemplateSelectableTextContainer,
+.policyTemplateSelectableTextContainerJustifyContentEnd {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  align-items: center;
+  gap: var(--sp3);
+}
+
+.policyTemplateSelectableDescription {
+  margin-block-start: var(--sp1);
+}
+
+.policyTemplateSelectable > div > div > div > button {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+}
+
+.policyTemplateSelectable > div > div > div > button svg {
+  fill: var(--color-neutral-200) !important;
+}
+
+.policyTemplateSelectable h4 {
+  font-size: var(--fs5);
+  font-weight: 700;
+  color: var(--color-foreground-text-me);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.policyTemplateSelectable ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp0) var(--sp1);
+  margin-block-start: var(--sp2);
+}
+
+.policyTemplateSelectable ul > li {
+  display: inline;
+  color: var(--color-foreground-text-le);
+  font-size: var(--fs1);
+}
+
+.policyTemplateSelectable p {
+  color: var(--color-foreground-text-le);
+  font-size: var(--fs1);
+  margin-block-start: var(--sp1);
+}
+
+.policyTemplateSelectable > input[type="radio"] {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.policyTemplateSelectable > input[type="radio"] + div {
+  border: 3px solid var(--color-neutral-200);
+  background-color: white;
+  border-radius: var(--br5);
+  padding: var(--sp3) var(--sp4);
+}
+
+.policyTemplateSelectable > input[type="radio"] + div svg {
+  fill: var(--color-neutral-200);
+  font-size: var(--fs6);
+}
+
+.policyTemplateSelectable > input[type="radio"]:checked + div {
+  border-color: var(--color-primary-l);
+}
+
+.policyTemplateSelectable > input[type="radio"]:checked + div svg {
+  fill: var(--color-primary);
+}
+
+@media (min-width: 1024px) {
+  .policyTemplateSelectableTextContainerJustifyContentEnd {
+    justify-content: end;
+  }
+}

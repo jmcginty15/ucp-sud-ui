@@ -1,0 +1,119 @@
+[data-cl-table-wrapper] {
+  overflow: hidden;
+}
+
+[data-cl-table] {
+  display: grid;
+  width: 100%;
+  overflow: auto;
+}
+
+[data-cl-table] thead,
+[data-cl-table] tbody,
+[data-cl-table] tr {
+  display: contents;
+}
+
+[data-cl-table] th {
+  position: relative;
+  font-size: var(--fs1);
+  color: var(--color-neutral-800);
+  /* text-transform: uppercase; */
+  text-align: start;
+  font-weight: 500;
+  /* background-color: var(--color-neutral-000); */
+}
+
+[data-cl-table] td {
+  position: relative;
+}
+
+[data-cl-table] td[data-selected="true"] {
+  background-color: var(--pltPrimaryLll);
+}
+
+[data-cl-table-cell] {
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 12px 16px;
+  color: var(--color-neutral-600);
+  font-size: var(--fs1);
+  text-align: start;
+  text-decoration: none;
+  /* min-width: 50px; */
+}
+
+[data-cl-table-cell][data-cl-table-cell-align="end"],
+[data-cl-table-cell][data-cl-table-cell-align="end"] {
+  text-align: end;
+}
+
+[data-cl-table-cell][data-cl-table-cell-align="center"],
+[data-cl-table-cell][data-cl-table-cell-align="center"] {
+  text-align: center;
+}
+
+[data-cl-table-cell][data-table-cell-emphasis="true"] {
+  font-weight: 500;
+  color: var(--color-neutral-900);
+}
+
+[data-cl-table] tr td {
+  border-block-start: 1px solid var(--color-neutral-200);
+}
+
+[data-cl-table] tr:last-of-type td {
+  border-block-end: 1px solid var(--color-neutral-200);
+}
+
+[data-cl-table-th-actions] {
+  display: inline-flex;
+  flex: none;
+  gap: var(--sp1);
+  margin-inline-start: var(--sp2);
+}
+
+[data-cl-table-th-actions] button,
+[data-cl-table-th-actions] a {
+  padding: 0;
+  width: 30px;
+  height: 22px;
+}
+
+[data-cl-table-resize-handle] {
+  display: block;
+  position: absolute;
+  cursor: col-resize;
+  width: 7px;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  border-right: 5px solid transparent;
+}
+
+[data-cl-table-resize-handle]:hover,
+[data-resizing="true"].resizeHandle {
+  border-color: rgb(0, 127, 212);
+}
+
+[data-cl-table-actions-container] {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  height: 100%;
+  padding: 0 8px;
+}
+
+[data-cl-table-selection-container] {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  height: 100%;
+  padding: 0 8px;
+}
+
+[data-cl-table-selection-container] > * > * {
+  display: block;
+}

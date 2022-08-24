@@ -1,0 +1,32 @@
+/* So we don't squat on a common name */
+.empty-7d3e5307 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  gap: var(--sp5);
+  margin: 0 auto;
+  padding: var(--sp5);
+  max-width: 500px;
+}
+
+.empty-7d3e5307 > svg {
+  font-size: 40px;
+  color: var(--color-primary-ll);
+  margin-block-end: -5px;
+}
+
+.empty-7d3e5307 > h3 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: var(--fs6);
+  margin-block-end: -15px;
+  text-align: center;
+}
+
+.empty-7d3e5307 > p {
+  color: var(--color-foreground-text-le);
+  font-size: var(--fs4);
+  text-align: center;
+}

@@ -1,0 +1,1018 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "UCP-SUD-Manager API",
+    "description": "UCP-SUD-Manager REST API Documentation",
+    "version": "v1"
+  },
+  "paths": {
+    "/v1/logs": {
+      "get": {
+        "tags": [
+          "System"
+        ],
+        "summary": "Get Log Events",
+        "operationId": "get_log_events_v1_logs_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        },
+        "x-technicity-sdk-name": "getLogEvents"
+      }
+    },
+    "/v1/health-check": {
+      "get": {
+        "tags": [
+          "System"
+        ],
+        "summary": "Run Health Check",
+        "operationId": "run_health_check_v1_health_check_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        },
+        "x-technicity-sdk-name": "runHealthCheck"
+      }
+    },
+    "/v1/register": {
+      "post": {
+        "tags": [
+          "User Access"
+        ],
+        "summary": "Create User",
+        "operationId": "create_user_v1_register_post",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Self"
+            },
+            "name": "self",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-technicity-sdk-name": "createUser"
+      }
+    },
+    "/v1/login": {
+      "post": {
+        "tags": [
+          "User Access"
+        ],
+        "summary": "Login User",
+        "operationId": "login_user_v1_login_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserLogin"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserWithToken"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-technicity-sdk-name": "loginUser"
+      }
+    },
+    "/v1/reset-password": {
+      "post": {
+        "tags": [
+          "User Access"
+        ],
+        "summary": "Initiate Password Reset",
+        "operationId": "initiate_password_reset_v1_reset_password_post",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Email",
+              "type": "string",
+              "format": "email"
+            },
+            "name": "email",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResetPasswordResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-technicity-sdk-name": "initiatePasswordReset"
+      }
+    },
+    "/v1/complete-reset-password": {
+      "post": {
+        "tags": [
+          "User Access"
+        ],
+        "summary": "Complete Reset Password",
+        "operationId": "complete_reset_password_v1_complete_reset_password_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompleteResetPasswordInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserWithToken"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-technicity-sdk-name": "completeResetPassword"
+      }
+    },
+    "/v1/me": {
+      "get": {
+        "tags": [
+          "User Access"
+        ],
+        "summary": "Get Me",
+        "operationId": "get_me_v1_me_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        },
+        "x-technicity-sdk-name": "getMe"
+      }
+    },
+    "/v1/system/verify": {
+      "get": {
+        "tags": [
+          "System"
+        ],
+        "summary": "Verify",
+        "operationId": "verify_v1_system_verify_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/app__models__Utility__Status"
+                }
+              }
+            }
+          }
+        },
+        "x-technicity-sdk-name": "verify"
+      }
+    },
+    "/v1/policies/policy-definitions": {
+      "get": {
+        "tags": [
+          "Policies"
+        ],
+        "summary": "Get Policy Definition List",
+        "operationId": "get_policy_definition_list_v1_policies_policy_definitions_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PolicyList"
+                }
+              }
+            }
+          }
+        },
+        "x-technicity-sdk-name": "getPolicyDefinitionList"
+      },
+      "post": {
+        "tags": [
+          "Policies"
+        ],
+        "summary": "Create Policy Definition",
+        "operationId": "create_policy_definition_v1_policies_policy_definitions_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PolicyCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Policy"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-technicity-sdk-name": "createPolicyDefinition"
+      }
+    },
+    "/v1/policies/policy-definitions/{policy_definition_uuid}": {
+      "get": {
+        "tags": [
+          "Policies"
+        ],
+        "summary": "Get Policy Definition",
+        "operationId": "get_policy_definition_v1_policies_policy_definitions__policy_definition_uuid__get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Policy Definition Uuid",
+              "pattern": "^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$",
+              "type": "string"
+            },
+            "name": "policy_definition_uuid",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Policy"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-technicity-sdk-name": "getPolicyDefinition"
+      },
+      "delete": {
+        "tags": [
+          "Policies"
+        ],
+        "summary": "Delete Policy Definition",
+        "operationId": "delete_policy_definition_v1_policies_policy_definitions__policy_definition_uuid__delete",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Policy Definition Uuid",
+              "pattern": "^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$",
+              "type": "string"
+            },
+            "name": "policy_definition_uuid",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/app__models__Standard__Status"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-technicity-sdk-name": "deletePolicyDefinition"
+      },
+      "patch": {
+        "tags": [
+          "Policies"
+        ],
+        "summary": "Update Policy Definition",
+        "operationId": "update_policy_definition_v1_policies_policy_definitions__policy_definition_uuid__patch",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Policy Definition Uuid",
+              "pattern": "^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$",
+              "type": "string"
+            },
+            "name": "policy_definition_uuid",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PolicyUpdate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Policy"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-technicity-sdk-name": "updatePolicyDefinition"
+      }
+    },
+    "/v1/policies/policy-definitions/{policy_definition_uuid}/download": {
+      "get": {
+        "tags": [
+          "Policies"
+        ],
+        "summary": "Get Policy Definition Download",
+        "operationId": "get_policy_definition_download_v1_policies_policy_definitions__policy_definition_uuid__download_get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Policy Definition Uuid",
+              "pattern": "^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$",
+              "type": "string"
+            },
+            "name": "policy_definition_uuid",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-technicity-sdk-name": "getPolicyDefinitionDownload"
+      }
+    },
+    "/v1/users/user/{user_uuid}": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get User",
+        "operationId": "get_user_v1_users_user__user_uuid__get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "User Uuid",
+              "pattern": "^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$",
+              "type": "string"
+            },
+            "name": "user_uuid",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-technicity-sdk-name": "getUser"
+      }
+    },
+    "/v1/users/users_list": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get User List",
+        "operationId": "get_user_list_v1_users_users_list_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserList"
+                }
+              }
+            }
+          }
+        },
+        "x-technicity-sdk-name": "getUserList"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CompleteResetPasswordInput": {
+        "title": "CompleteResetPasswordInput",
+        "required": [
+          "token",
+          "password",
+          "password_confirm"
+        ],
+        "type": "object",
+        "properties": {
+          "token": {
+            "title": "Token",
+            "type": "string"
+          },
+          "password": {
+            "title": "Password",
+            "type": "string"
+          },
+          "password_confirm": {
+            "title": "Password Confirm",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Cursors": {
+        "title": "Cursors",
+        "type": "object",
+        "properties": {
+          "after": {
+            "title": "After",
+            "type": "string"
+          },
+          "before": {
+            "title": "Before",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "HTTPValidationError": {
+        "title": "HTTPValidationError",
+        "type": "object",
+        "properties": {
+          "detail": {
+            "title": "Detail",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            }
+          }
+        }
+      },
+      "Pagination": {
+        "title": "Pagination",
+        "required": [
+          "totalCount",
+          "cursors"
+        ],
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "title": "Totalcount",
+            "type": "integer"
+          },
+          "cursors": {
+            "$ref": "#/components/schemas/Cursors"
+          },
+          "previous": {
+            "title": "Previous",
+            "type": "string"
+          },
+          "next": {
+            "title": "Next",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Policy": {
+        "title": "Policy",
+        "required": [
+          "uuid",
+          "name",
+          "enum",
+          "privacyPolicy",
+          "dataTypeList",
+          "version",
+          "publicUrl"
+        ],
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "title": "Uuid",
+            "pattern": "^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "enum": {
+            "title": "Enum",
+            "type": "string"
+          },
+          "privacyPolicy": {
+            "title": "Privacypolicy",
+            "type": "object"
+          },
+          "dataTypeList": {
+            "title": "Datatypelist",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "version": {
+            "title": "Version",
+            "type": "integer"
+          },
+          "publicUrl": {
+            "title": "Publicurl",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PolicyCreate": {
+        "title": "PolicyCreate",
+        "required": [
+          "name",
+          "privacyPolicy",
+          "schemaVersion"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "privacyPolicy": {
+            "title": "Privacypolicy",
+            "type": "object"
+          },
+          "schemaVersion": {
+            "title": "Schemaversion",
+            "type": "integer"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PolicyList": {
+        "title": "PolicyList",
+        "required": [
+          "paging",
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "paging": {
+            "$ref": "#/components/schemas/PolicyPaging"
+          },
+          "results": {
+            "title": "Results",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Policy"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "PolicyPaging": {
+        "title": "PolicyPaging",
+        "required": [
+          "totalCount",
+          "hasNextPage"
+        ],
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "title": "Totalcount",
+            "type": "integer"
+          },
+          "hasNextPage": {
+            "title": "Hasnextpage",
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PolicyUpdate": {
+        "title": "PolicyUpdate",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "privacyPolicy": {
+            "title": "Privacypolicy",
+            "type": "object"
+          },
+          "schemaVersion": {
+            "title": "Schemaversion",
+            "type": "integer"
+          },
+          "publicUrl": {
+            "title": "Publicurl",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResetPasswordResponse": {
+        "title": "ResetPasswordResponse",
+        "required": [
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "title": "Status",
+            "type": "string"
+          },
+          "info": {
+            "title": "Info",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "User": {
+        "title": "User",
+        "required": [
+          "uuid",
+          "firstName",
+          "lastName",
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "title": "Uuid",
+            "pattern": "^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$",
+            "type": "string"
+          },
+          "firstName": {
+            "title": "Firstname",
+            "maxLength": 255,
+            "type": "string"
+          },
+          "lastName": {
+            "title": "Lastname",
+            "maxLength": 255,
+            "type": "string"
+          },
+          "email": {
+            "title": "Email",
+            "type": "string",
+            "format": "email"
+          },
+          "username": {
+            "title": "Username",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserCreate": {
+        "title": "UserCreate",
+        "required": [
+          "firstName",
+          "lastName",
+          "email",
+          "username",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "title": "Firstname",
+            "maxLength": 255,
+            "type": "string"
+          },
+          "lastName": {
+            "title": "Lastname",
+            "maxLength": 255,
+            "type": "string"
+          },
+          "email": {
+            "title": "Email",
+            "type": "string",
+            "format": "email"
+          },
+          "username": {
+            "title": "Username",
+            "maxLength": 255,
+            "type": "string"
+          },
+          "password": {
+            "title": "Password",
+            "maxLength": 72,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserList": {
+        "title": "UserList",
+        "required": [
+          "results",
+          "pagination"
+        ],
+        "type": "object",
+        "properties": {
+          "results": {
+            "title": "Results",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/User"
+            }
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/Pagination"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserLogin": {
+        "title": "UserLogin",
+        "required": [
+          "username",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "username": {
+            "title": "Username",
+            "type": "string"
+          },
+          "password": {
+            "title": "Password",
+            "maxLength": 72,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserWithToken": {
+        "title": "UserWithToken",
+        "required": [
+          "user",
+          "token",
+          "token_expiration",
+          "refresh_token",
+          "refresh_token_expiration"
+        ],
+        "type": "object",
+        "properties": {
+          "user": {
+            "$ref": "#/components/schemas/User"
+          },
+          "token": {
+            "title": "Token",
+            "type": "string"
+          },
+          "token_expiration": {
+            "title": "Token Expiration",
+            "type": "integer"
+          },
+          "refresh_token": {
+            "title": "Refresh Token",
+            "type": "string"
+          },
+          "refresh_token_expiration": {
+            "title": "Refresh Token Expiration",
+            "type": "integer"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ValidationError": {
+        "title": "ValidationError",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "loc": {
+            "title": "Location",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        }
+      },
+      "app__models__Standard__Status": {
+        "title": "Status",
+        "required": [
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "app__models__Utility__Status": {
+        "title": "Status",
+        "required": [
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "title": "Status",
+            "type": "string"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

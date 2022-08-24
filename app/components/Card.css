@@ -1,0 +1,6 @@
+/* So we don't squat on a common name */
+.card-bf55b3c6f239 {
+  background-color: var(--color-foreground);
+  box-shadow: var(--box-shadow-0);
+  border-block-start: 8px solid var(--color-secondary);
+}
